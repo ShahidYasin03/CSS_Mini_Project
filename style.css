@@ -31,10 +31,11 @@
 }
 
 .sidebar_menu .logo {
+    height: 56px;
     position: absolute;
     width: 100%;
     line-height: 60px;
-    box-shadow: 0 0 4px rgba(255, 355, 255, 0.5);
+    box-shadow: 0 2px 4px rgba(255, 355, 255, 0.5);
 }
 
 .sidebar_menu .logo a {
@@ -51,7 +52,7 @@
     font-size: 25px;
     line-height: 60px;
     position: absolute;
-    left: 275px;
+    left: 270px;
     opacity: 0;
     cursor: pointer;
     transition: all 0.2s linear;
