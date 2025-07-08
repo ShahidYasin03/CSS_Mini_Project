@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button OP</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      button {
+        background: linear-gradient(to bottom, #f8f8f8, #add8f0);
+        padding: 16px 26px;
+        font-size: 16px;
+        border-radius: 10px;
+        border: 0.7px solid #ffffff;
+        font-weight: 600;
+      }
+      .b1 {
+        position: relative;
+        padding: 0.5px;
+        border-radius: 13px;
+        border: 0.1px solid rgba(255, 255, 255, 0.74);
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .b1::before {
+        position: absolute;
+        width: 150%;
+        height: 150%;
+        content: "";
+        left: -25%;
+        top: -25%;
+        background: conic-gradient(
+          from 90deg,
+          rgb(0 0 0 / 0%) 10%,
+          rgb(11 78 230 / 0%) 96%,
+          rgb(230, 230, 230) 10%
+        );
+        animation: rotate 3s linear infinite;
+        will-change: transform;
+        transform-origin: center center; /* 🔥 fixes the squish */
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .b1 > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .b2 {
+        padding: 2px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.1); /* translucent glass base */
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* soft shadow */
+        backdrop-filter: blur(10px); /* the actual blur effect */
+        -webkit-backdrop-filter: blur(10px); /* safari fix */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* visibility: hidden; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="b1">
+      <div class="b2">
+        <button>Contact Me</button>
+      </div>
+    </div>
+  </body>
+</html>
